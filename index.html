@@ -22,7 +22,13 @@
           <input type="text" name="todo" autocomplete="off" />
           <button type="submit">확인</button>
         </form>
-        <ul class="todo-list" id="todoList"></ul>
+        <div class="scroll-container">
+          <div class="user-list-container" id="userListContainer">
+            <div class="user-list-title">프로필 선택</div>
+            <ul class="user-list" id="userList"></ul>
+          </div>
+          <ul class="todo-list" id="todoList"></ul>
+        </div>
       </div>
     </div>
     <div class="bg-container" id="bg"></div>

@@ -48,6 +48,8 @@ ul {
   position: relative;
   z-index: 1;
   padding: 0 10px;
+  display: flex;
+  flex-direction: column;
 }
 .clock {
   font-size: 2rem;
@@ -130,6 +132,15 @@ ul {
   background-color: transparent;
 }
 
+.scroll-container {
+  flex-grow: 1;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  overflow-y: scroll;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
 .todo-list {
   display: none;
   flex-wrap: wrap;
@@ -155,4 +166,32 @@ ul {
   border: none;
   padding: 0;
   margin: 0;
+}
+
+.user-list-container {
+  display: none;
+}
+.user-list-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.user-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.user-list li button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 2.5rem;
+  border: 1px solid var(--font-color);
+  width: 100px;
+  padding: 10px;
+  border-radius: 15px;
+  opacity: 0.5;
+}
+.user-list li button:hover {
+  opacity: 1;
 }

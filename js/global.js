@@ -17,6 +17,8 @@ const bg = document.getElementById('bg');
 const clock = document.getElementById('clock');
 const weatherHTML = document.getElementById('weather');
 const logoutHTML = document.getElementById('logout');
+const userListHTML = document.getElementById('userList');
+const userListContainer = document.getElementById('userListContainer');
 
 // 함수정리
 const setTitle = (html) => {
@@ -54,6 +56,11 @@ const logout = () => {
   init();
 };
 
+const login = (userId) => {
+  localStorage.setItem(USER_ID, userId);
+  init();
+};
+
 const showLogout = () => {
   logoutHTML.style.display = 'block';
   setTimeout(() => {
@@ -61,12 +68,31 @@ const showLogout = () => {
   }, 1000);
 };
 
+// 유저 프로필 리스트
+const renderUserList = () => {
+  const user_list = JSON.parse(localStorage.getItem(USER_LIST));
+  if (user_list == null) return;
+
+  const emoji = ['😀', '👻', '🍎', '🐤', '🥕', '🚌', '🦄'];
+  let result = '';
+  user_list.forEach((user) => {
+    const randomIndex = Math.floor(Math.random() * emoji.length);
+
+    const HTML = `<li><button onclick="login('${user}')">${emoji[randomIndex]}<div style="font-size: 70%">${user}</div></button></li>`;
+    result = result + HTML;
+  });
+  userListHTML.innerHTML = result;
+};
+
+renderUserList();
+
 // 앱실행
 // 유저 아이디가 있는지 확인후 케이스별 처리
 const init = () => {
   const id = localStorage.getItem(USER_ID);
   if (id) {
     loginForm.style.display = 'none';
+    userListContainer.style.display = 'none';
     todoForm.style.display = 'grid';
     todoList.style.display = 'flex';
     showLogout();
@@ -75,6 +101,7 @@ const init = () => {
     renderTodoList(LSTodoKey);
   } else {
     loginForm.style.display = 'grid';
+    userListContainer.style.display = 'block';
     todoForm.style.display = 'none';
     todoList.style.display = 'none';
     logoutHTML.style.display = 'none';
