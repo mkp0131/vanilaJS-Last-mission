@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마지막 과제!</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="contents">
+        <div class="clock" id="clock"></div>
+        <div class="weather" id="weather"></div>
+        <button class="logout" id="logout" onclick="logout()">로그아웃</button>
+        <div class="title" id="title"></div>
+        <form class="login-form" id="loginForm">
+          <input type="text" name="id" autocomplete="off" />
+          <button type="submit">확인</button>
+        </form>
+        <form class="todo-form" id="todoForm">
+          <input type="text" name="todo" autocomplete="off" />
+          <button type="submit">확인</button>
+        </form>
+        <ul class="todo-list" id="todoList"></ul>
+      </div>
+    </div>
+    <div class="bg-container" id="bg"></div>
+    <script src="js/global.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/bg.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/todo.js"></script>
+  </body>
+</html>
