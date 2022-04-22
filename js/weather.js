@@ -26,6 +26,9 @@
       return res.json();
     })
     .then((res) => {
+      if (res.error) {
+        throw new Error(res.error);
+      }
       getWeather(res.api_key);
     })
     .catch((err) => {
