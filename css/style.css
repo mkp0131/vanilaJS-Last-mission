@@ -181,6 +181,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .user-list li button {
   background: rgba(255, 255, 255, 0.1);
