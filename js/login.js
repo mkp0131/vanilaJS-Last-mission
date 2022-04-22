@@ -3,6 +3,7 @@
     event.preventDefault();
 
     const id = idInput.value;
+    if (!id) return;
     const userList = JSON.parse(localStorage.getItem(USER_LIST)) || [];
 
     // 회원가입

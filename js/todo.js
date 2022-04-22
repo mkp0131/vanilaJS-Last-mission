@@ -3,6 +3,7 @@
     event.preventDefault();
 
     const todo = todoInput.value;
+    if (!todo) return;
     const id = localStorage.getItem(USER_ID);
     const LSTodoKey = USER_TODO(id);
     const todoList = JSON.parse(localStorage.getItem(LSTodoKey));
