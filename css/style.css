@@ -191,6 +191,7 @@ ul {
   padding: 10px;
   border-radius: 15px;
   opacity: 0.5;
+  word-break: break-all;
 }
 .user-list li button:hover {
   opacity: 1;
