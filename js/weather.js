@@ -1,5 +1,5 @@
 {
-  const API_KEY = process.env.WEATHER_API_KEY;
+  const API_KEY = secrets.WEATHER_API_KEY;
 
   navigator.geolocation?.getCurrentPosition(({ coords, timestamp }) => {
     const lat = coords.latitude;
