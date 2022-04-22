@@ -16,6 +16,7 @@
     if (!localStorage.getItem(LSTodoKey)) {
       localStorage.setItem(LSTodoKey, JSON.stringify([]));
     }
+    idInput.value = '';
     renderTodoList(LSTodoKey);
 
     loginForm.style.display = 'none';

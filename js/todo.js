@@ -12,6 +12,7 @@
       JSON.stringify([{ todo, id: Date.now() }, ...todoList])
     );
 
+    todoInput.value = '';
     renderTodoList(LSTodoKey);
   };
 
