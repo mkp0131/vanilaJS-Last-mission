@@ -20,6 +20,7 @@
     renderTodoList(LSTodoKey);
 
     loginForm.style.display = 'none';
+    userListContainer.style.display = 'none';
     todoForm.style.display = 'grid';
     todoList.style.display = 'flex';
     showLogout();

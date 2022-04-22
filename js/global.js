@@ -84,8 +84,6 @@ const renderUserList = () => {
   userListHTML.innerHTML = result;
 };
 
-renderUserList();
-
 // 앱실행
 // 유저 아이디가 있는지 확인후 케이스별 처리
 const init = () => {
@@ -106,6 +104,7 @@ const init = () => {
     todoList.style.display = 'none';
     logoutHTML.style.display = 'none';
     todoList.innerHTML = '';
+    renderUserList();
     setTitle(LOGIN_TITLE);
   }
 };
